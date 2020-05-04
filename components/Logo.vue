@@ -23,7 +23,13 @@
     </g>
   </svg>
 </template>
-<style>
+
+<script lang="ts">
+import Vue from 'vue'
+export default Vue.extend({})
+</script>
+
+<style lang="scss" module>
 .NuxtLogo {
   animation: 1s appear;
   margin: auto;

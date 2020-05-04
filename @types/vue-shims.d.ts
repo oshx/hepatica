@@ -1,3 +1,8 @@
+declare module '*.vue' {
+  import Vue from 'vue'
+  export = Vue
+}
+
 declare namespace NodeJS {
   interface Process {
     env: ProcessEnv

@@ -14,15 +14,5 @@
   "plugins": [
     "prettier"
   ],
-  "rules": {},
-  "overrides": [
-    {
-      "files": [
-        "*.js"
-      ],
-      "rules": {
-        "@typescript-eslint": "off"
-      }
-    }
-  ]
+  "rules": {}
 }

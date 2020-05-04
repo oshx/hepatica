@@ -2,39 +2,35 @@
   "compilerOptions": {
     "target": "ES2020",
     "module": "ES2020",
+    "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
-    "lib": [
-      "esnext",
-      "esnext.asynciterable",
-      "ScriptHost",
-      "ES2020",
-      "DOM",
-      "DOM.Iterable"
-    ],
     "esModuleInterop": true,
     "allowJs": true,
     "sourceMap": true,
     "strict": true,
     "noEmit": true,
     "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "removeComments": true,
+    "isolatedModules": false,
+    "pretty": true,
     "baseUrl": ".",
+    "jsx": "preserve",
     "paths": {
-      "~/*": [
-        "./*"
-      ],
-      "@/*": [
-        "./*"
-      ]
+      "@/*": ["./*"],
+      "~/*": ["./*"]
     },
-    "types": [
-      "@types/node",
-      "@nuxt/types",
-      "./@types"
-    ]
+    "lib": [
+      "esnext",
+      "esnext.asynciterable",
+      "ES2020",
+      "ScriptHost",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "typeRoots": ["@types", "node_modules/@types"],
+    "types": ["@types/node", "webpack-env", "@nuxt/types"]
   },
-  "exclude": [
-    "node_modules",
-    ".nuxt",
-    "dist"
-  ]
+  "exclude": ["node_modules", ".nuxt", "dist"],
+  "include": ["*.config.ts"]
 }

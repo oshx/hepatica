@@ -12,14 +12,11 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "lint": "eslint --ext .ts,.vue --ignore-path .gitignore .",
-    "test": "ava",
-    "test:unit": "cross-env TEST=unit ava ./test/specs/**/*",
-    "test:e2e": "cross-env TEST=e2e ava ./test/e2e/**/*"
+    "lint": "eslint --ignore-path .gitignore './**/*.{ts,vue}'",
+    "check": "npm-check -u"
   },
   "lint-staged": {
-    "*.{ts,vue}": "npm run lint",
-    "*.{css,vue}": "stylelint"
+    "*.{ts,vue}": "npm run lint"
   },
   "husky": {
     "hooks": {
@@ -27,23 +24,21 @@
     }
   },
   "dependencies": {
-    "nuxt": "^2.0.0",
     "@nuxtjs/axios": "^5.3.6",
-    "@nuxtjs/dotenv": "^1.4.0"
+    "@nuxtjs/dotenv": "^1.4.0",
+    "@nuxtjs/pwa": "^3.0.0-beta.20",
+    "nuxt": "^2.0.0"
   },
   "devDependencies": {
-    "@ava/babel": "^1.0.0",
+    "@babel/core": "^7.9.6",
     "@nuxt/typescript-build": "^0.6.0",
-    "@nuxtjs/eslint-config-typescript": "^1.0.0",
+    "@nuxtjs/eslint-config-typescript": "^1.0.2",
     "@nuxtjs/eslint-module": "^1.0.0",
-    "@nuxtjs/style-resources": "^1.0.0",
-    "@nuxtjs/stylelint-module": "^3.1.0",
     "@types/node": "^13.13.4",
-    "@vue/test-utils": "^1.0.0-beta.27",
-    "ava": "^3.0.0",
     "babel-eslint": "^10.0.1",
-    "babel-plugin-module-resolver": "^3.2.0",
+    "babel-plugin-module-resolver": "^4.0.0",
     "browser-env": "^3.2.5",
+    "cross-env": "^7.0.2",
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-nuxt": ">=0.4.2",
@@ -51,11 +46,11 @@
     "husky": "^4.0.0",
     "lint-staged": "^10.0.0",
     "node-sass": "^4.14.0",
-    "prettier": "^1.19.1",
+    "npm-check": "^5.9.2",
+    "prettier": "^2.0.5",
     "require-extension-hooks": "^0.3.3",
     "require-extension-hooks-babel": "^1.0.0",
-    "require-extension-hooks-vue": "^2.0.0",
-    "sass-loader": "^8.0.2",
-    "stylelint": "^10.1.0"
+    "require-extension-hooks-vue": "^3.0.0",
+    "sass-loader": "^8.0.2"
   }
 }

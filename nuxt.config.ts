@@ -1,20 +1,25 @@
+import packageJSON from 'package.json'
+import { Configuration } from '@nuxt/types/config'
+
+const { name } = packageJSON
+
 export default {
   mode: 'universal',
   /*
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: process.env.npm_package_name || name || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
-      }
+        content: process.env.npm_package_description || '',
+      },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   /*
    ** Customize the progress-bar color
@@ -34,7 +39,7 @@ export default {
   buildModules: [
     '@nuxt/typescript-build',
     // Doc: https://github.com/nuxt-community/stylelint-module
-    '@nuxtjs/stylelint-module'
+    '@nuxtjs/stylelint-module',
   ],
   /*
    ** Nuxt.js modules
@@ -43,7 +48,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
   ],
   /*
    ** Axios module configuration
@@ -57,6 +62,9 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
-  }
-}
+    extend(config, ctx): void {
+      // eslint-disable-next-line no-console
+      console.debug({ config, ctx })
+    },
+  },
+} as Configuration
