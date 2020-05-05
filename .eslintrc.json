@@ -11,8 +11,8 @@
     "plugin:prettier/recommended",
     "plugin:nuxt/recommended"
   ],
-  "plugins": [
-    "prettier"
-  ],
-  "rules": {}
+  "plugins": ["prettier"],
+  "rules": {
+    "no-console": "off"
+  }
 }

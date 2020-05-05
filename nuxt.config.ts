@@ -1,7 +1,4 @@
-import packageJSON from 'package.json'
 import { Configuration } from '@nuxt/types/config'
-
-const { name } = packageJSON
 
 export default {
   mode: 'universal',
@@ -9,7 +6,10 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || name || '',
+    htmlAttrs: {
+      lang: process.env.lang || 'ko-KR',
+    },
+    title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -37,7 +37,13 @@ export default {
    ** Nuxt.js dev-modules
    */
   buildModules: [
-    '@nuxt/typescript-build',
+    [
+      '@nuxt/typescript-build',
+      {
+        typeCheck: true,
+        ignoreNotFoundWarnings: true,
+      },
+    ],
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
   ],

@@ -6,7 +6,12 @@ declare module '*.vue' {
 declare namespace NodeJS {
   interface Process {
     env: ProcessEnv
+
+    // nuxt
+    client: boolean
+    server: boolean
   }
+
   interface ProcessEnv {
     [key: string]: string | undefined
   }
