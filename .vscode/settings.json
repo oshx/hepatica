@@ -1,7 +1,7 @@
 {
   "editor.defaultFormatter": "octref.vetur",
   "[jsonc]": {
-    "editor.defaultFormatter": "SimonSiefke.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[vue]": {
     "editor.defaultFormatter": "octref.vetur"

@@ -65,6 +65,10 @@ export default {
    ** Build configuration
    */
   build: {
+    publicPath: process.env.npm_package_config_asset,
+    analyze: {
+      analyzerMode: 'static',
+    },
     /*
      ** You can extend webpack config here
      */
