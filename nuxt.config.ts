@@ -14,6 +14,10 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
+        name: 'version',
+        content: process.env.npm_package_version || 'UNVERSIONED',
+      },
+      {
         hid: 'description',
         name: 'description',
         content: process.env.npm_package_description || '',
@@ -66,9 +70,6 @@ export default {
    */
   build: {
     publicPath: process.env.npm_package_config_asset,
-    analyze: {
-      analyzerMode: 'static',
-    },
     /*
      ** You can extend webpack config here
      */
