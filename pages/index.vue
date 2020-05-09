@@ -30,7 +30,7 @@ export default Vue.extend({
 })
 </script>
 
-<style>
+<style lang="scss" module>
 .container {
   margin: 0 auto;
   min-height: 100vh;

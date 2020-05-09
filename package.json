@@ -15,7 +15,9 @@
     "clean": "ts-node scripts/clean.ts",
     "publish:github": "ts-node scripts/publish-github.ts --color=always",
     "publish": "npm run clean && npm run generate && npm run publish:github",
-    "lint": "eslint --fix --ignore-path .gitignore './**/*.{ts,vue}'",
+    "lint": "npm run lint:eslint && npm run lint:css",
+    "lint:eslint": "eslint --fix --ignore-path .gitignore './**/*.{ts,vue}'",
+    "lint:css": "stylelint '**/*.vue' --syntax scss",
     "check": "npm-check -u",
     "fix": "npm run fix:check && npm run fix:audit && npm run fix:sass",
     "fix:check": "npm-check --skip-unused --update-all",
@@ -74,7 +76,8 @@
     "sass-loader": "^8.0.2",
     "simple-git": "^2.4.0",
     "stylelint": "^13.3.3",
-    "stylelint-config-standard": "^20.0.0",
+    "stylelint-prettier": "^1.1.2",
+    "stylelint-processor-html": "^1.0.0",
     "ts-node": "^8.10.1"
   }
 }
