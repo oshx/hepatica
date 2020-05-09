@@ -79,6 +79,7 @@ dist
 
 # IDE / Editor
 .idea
+.vscode
 
 # Service worker
 sw.*
@@ -92,4 +93,7 @@ sw.*
 # built files
 dist/
 .nuxt/
+
+# Prevent to use yarn
+yarn.lock
 

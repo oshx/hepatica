@@ -79,5 +79,8 @@
     "stylelint-prettier": "^1.1.2",
     "stylelint-processor-html": "^1.0.0",
     "ts-node": "^8.10.1"
+  },
+  "engines": {
+    "yarn": "npm 사용."
   }
 }
